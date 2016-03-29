@@ -1,0 +1,43 @@
+$NetBSD$
+
+--- gettext-tools/man/Makefile.in.orig	2015-09-11 03:05:10.000000000 +0000
++++ gettext-tools/man/Makefile.in
+@@ -1794,22 +1794,22 @@ $(man_MAN1SRC): help2man $(top_srcdir)/.
+ 	IN_HELP2MAN=1 $(SHELL) x-to-1 $(UPDATEMODE) "$(PERL)" "$(HELP2MAN)" \
+ 	  ../src/$${progname}$(EXEEXT) $(srcdir)/$${progname}.x $@
+ 
+-msgcmp.1: msgcmp.x ../src/msgcmp.c
+-msgfmt.1: msgfmt.x ../src/msgfmt.c
+-msgmerge.1: msgmerge.x ../src/msgmerge.c
+-msgunfmt.1: msgunfmt.x ../src/msgunfmt.c
+-xgettext.1: xgettext.x ../src/xgettext.c
+-msgattrib.1: msgattrib.x ../src/msgattrib.c
+-msgcat.1: msgcat.x ../src/msgcat.c
+-msgcomm.1: msgcomm.x ../src/msgcomm.c
+-msgconv.1: msgconv.x ../src/msgconv.c
+-msgen.1: msgen.x ../src/msgen.c
+-msgexec.1: msgexec.x ../src/msgexec.c
+-msgfilter.1: msgfilter.x ../src/msgfilter.c
+-msggrep.1: msggrep.x ../src/msggrep.c
+-msginit.1: msginit.x ../src/msginit.c
+-msguniq.1: msguniq.x ../src/msguniq.c
+-recode-sr-latin.1: recode-sr-latin.x ../src/recode-sr-latin.c
++msgcmp.1:
++msgfmt.1:
++msgmerge.1:
++msgunfmt.1:
++xgettext.1:
++msgattrib.1:
++msgcat.1:
++msgcomm.1:
++msgconv.1:
++msgen.1:
++msgexec.1:
++msgfilter.1:
++msggrep.1:
++msginit.1:
++msguniq.1:
++recode-sr-latin.1:
+ 
+ $(man_MAN1MISC): help2man $(top_srcdir)/../.version
+ 	progname=`echo $@ | sed -e 's/\.in$$//' -e 's/\.1$$//'`; \

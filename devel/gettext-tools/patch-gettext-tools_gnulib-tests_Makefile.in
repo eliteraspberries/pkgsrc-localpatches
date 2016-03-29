@@ -1,0 +1,29 @@
+$NetBSD$
+
+--- gettext-tools/gnulib-tests/Makefile.in.orig	2015-09-11 03:05:10.000000000 +0000
++++ gettext-tools/gnulib-tests/Makefile.in
+@@ -5867,19 +5867,19 @@ inttypes.h: inttypes.in.h $(top_builddir
+ 	} > $@-t && \
+ 	mv $@-t $@
+ 
+-test-moo-root.h test-moo-root.c root.priv.h root.vt.h : $(top_srcdir)/../build-aux/moopp test-moo-root.oo.h test-moo-root.oo.c
++test-moo-root.h test-moo-root.c root.priv.h root.vt.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/test-moo-root.oo.c $(srcdir)/test-moo-root.oo.h
+ 
+-test-moo-sub1.h test-moo-sub1.c sub1.priv.h sub1.vt.h : $(top_srcdir)/../build-aux/moopp test-moo-root.oo.h test-moo-sub1.oo.h test-moo-sub1.oo.c
++test-moo-sub1.h test-moo-sub1.c sub1.priv.h sub1.vt.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/test-moo-sub1.oo.c $(srcdir)/test-moo-sub1.oo.h $(srcdir)/test-moo-root.oo.h
+ 
+-test-moo-sub2.h test-moo-sub2.c sub2.priv.h sub2.vt.h : $(top_srcdir)/../build-aux/moopp test-moo-root.oo.h test-moo-sub1.oo.h test-moo-sub2.oo.h test-moo-sub2.oo.c
++test-moo-sub2.h test-moo-sub2.c sub2.priv.h sub2.vt.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/test-moo-sub2.oo.c $(srcdir)/test-moo-sub2.oo.h $(srcdir)/test-moo-sub1.oo.h $(srcdir)/test-moo-root.oo.h
+ 
+-test-moo-aroot.h test-moo-aroot.c aroot.priv.h aroot.vt.h : $(top_srcdir)/../build-aux/moopp test-moo-aroot.oo.h test-moo-aroot.oo.c
++test-moo-aroot.h test-moo-aroot.c aroot.priv.h aroot.vt.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/test-moo-aroot.oo.c $(srcdir)/test-moo-aroot.oo.h
+ 
+-test-moo-asub1.h test-moo-asub1.c asub1.priv.h asub1.vt.h : $(top_srcdir)/../build-aux/moopp test-moo-aroot.oo.h test-moo-asub1.oo.h test-moo-asub1.oo.c
++test-moo-asub1.h test-moo-asub1.c asub1.priv.h asub1.vt.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/test-moo-asub1.oo.c $(srcdir)/test-moo-asub1.oo.h $(srcdir)/test-moo-aroot.oo.h
+ @POSIX_SPAWN_PORTED_TRUE@test-posix_spawn1.sh: test-posix_spawn1.in.sh
+ @POSIX_SPAWN_PORTED_TRUE@	$(AM_V_GEN)rm -f $@-t $@ && \

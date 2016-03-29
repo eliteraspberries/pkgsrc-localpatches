@@ -1,0 +1,17 @@
+$NetBSD$
+
+--- gettext-runtime/man/Makefile.in.orig	2015-09-11 03:04:53.000000000 +0000
++++ gettext-runtime/man/Makefile.in
+@@ -1596,9 +1596,9 @@ $(man_MAN1IN) $(man_MAN1OTHER): help2man
+ 	IN_HELP2MAN=1 $(SHELL) x-to-1 $(UPDATEMODE) "$(PERL)" "$(HELP2MAN)" \
+ 	  ../src/$${progname}$(EXEEXT) $(srcdir)/$${progname}.x $@
+ 
+-gettext.1.in: gettext.x ../src/gettext.c
+-ngettext.1.in: ngettext.x ../src/ngettext.c
+-envsubst.1: envsubst.x ../src/envsubst.c
++gettext.1.in:
++ngettext.1.in:
++envsubst.1:
+ 
+ $(man_MAN3): $(top_srcdir)/../.version
+ 	sed -e 's/@''VERSION''@/@VERSION@/g' < $(srcdir)/$@.in > t-$@ && \
