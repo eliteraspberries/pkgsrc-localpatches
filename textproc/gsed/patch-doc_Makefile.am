@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- doc/Makefile.am.orig	2012-07-25 10:33:09.000000000 +0000
++++ doc/Makefile.am
+@@ -25,7 +25,7 @@ $(srcdir)/s-texi: sed-in.texi $(srcdir)/
+ 	fi
+ 	echo stamp > $(srcdir)/s-texi
+ 
+-sed.1: $(top_srcdir)/sed/sed.c $(top_srcdir)/configure.ac $(srcdir)/sed.x
++sed.1:
+ 	$(HELP2MAN) --name "stream editor for filtering and transforming text" \
+ 	  -p sed --include $(srcdir)/sed.x -o $(srcdir)/sed.1 $(SED) 
+ 
