@@ -1,0 +1,76 @@
+$NetBSD$
+
+--- gettext-tools/gnulib-lib/Makefile.in.orig	2016-04-02 12:31:21.000000000 -0400
++++ gettext-tools/gnulib-lib/Makefile.in	2016-04-02 12:34:49.000000000 -0400
+@@ -3323,7 +3323,7 @@
+ 	mv $@-t $@
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-fd-ostream.h : $(top_srcdir)/../build-aux/moopp fd-ostream.oo.h fd-ostream.oo.c ostream.oo.h
++fd-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/fd-ostream.oo.c $(srcdir)/fd-ostream.oo.h $(srcdir)/ostream.oo.h
+ fd-ostream.c fd_ostream.priv.h fd_ostream.vt.h : fd-ostream.h
+ 	@test -f $@ || { \
+@@ -3339,7 +3339,7 @@
+ 	}
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-file-ostream.h : $(top_srcdir)/../build-aux/moopp file-ostream.oo.h file-ostream.oo.c ostream.oo.h
++file-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/file-ostream.oo.c $(srcdir)/file-ostream.oo.h $(srcdir)/ostream.oo.h
+ file-ostream.c file_ostream.priv.h file_ostream.vt.h : file-ostream.h
+ 	@test -f $@ || { \
+@@ -3401,7 +3401,7 @@
+ 
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-html-ostream.h : $(top_srcdir)/../build-aux/moopp html-ostream.oo.h html-ostream.oo.c ostream.oo.h
++html-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/html-ostream.oo.c $(srcdir)/html-ostream.oo.h $(srcdir)/ostream.oo.h
+ html-ostream.c html_ostream.priv.h html_ostream.vt.h : html-ostream.h
+ 	@test -f $@ || { \
+@@ -3417,7 +3417,7 @@
+ 	}
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-html-styled-ostream.h : $(top_srcdir)/../build-aux/moopp html-styled-ostream.oo.h html-styled-ostream.oo.c styled-ostream.oo.h ostream.oo.h
++html-styled-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/html-styled-ostream.oo.c $(srcdir)/html-styled-ostream.oo.h $(srcdir)/styled-ostream.oo.h $(srcdir)/ostream.oo.h
+ html-styled-ostream.c html_styled_ostream.priv.h html_styled_ostream.vt.h : html-styled-ostream.h
+ 	@test -f $@ || { \
+@@ -3965,7 +3965,7 @@
+ 	mv $@-t $@
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-ostream.h : $(top_srcdir)/../build-aux/moopp ostream.oo.h ostream.oo.c
++ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/ostream.oo.c $(srcdir)/ostream.oo.h
+ ostream.c ostream.priv.h ostream.vt.h : ostream.h
+ 	@test -f $@ || { \
+@@ -4515,7 +4515,7 @@
+ 	mv $@-t $@
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-styled-ostream.h : $(top_srcdir)/../build-aux/moopp styled-ostream.oo.h styled-ostream.oo.c ostream.oo.h
++styled-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/styled-ostream.oo.c $(srcdir)/styled-ostream.oo.h $(srcdir)/ostream.oo.h
+ styled-ostream.c styled_ostream.priv.h styled_ostream.vt.h : styled-ostream.h
+ 	@test -f $@ || { \
+@@ -4666,7 +4666,7 @@
+ 	mv $@-t $@
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-term-ostream.h : $(top_srcdir)/../build-aux/moopp term-ostream.oo.h term-ostream.oo.c ostream.oo.h
++term-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/term-ostream.oo.c $(srcdir)/term-ostream.oo.h $(srcdir)/ostream.oo.h
+ term-ostream.c term_ostream.priv.h term_ostream.vt.h : term-ostream.h
+ 	@test -f $@ || { \
+@@ -4682,7 +4682,7 @@
+ 	}
+ # This is a Makefile rule that generates multiple files at once; see the
+ # automake documentation, node "Multiple Outputs", for details.
+-term-styled-ostream.h : $(top_srcdir)/../build-aux/moopp term-styled-ostream.oo.h term-styled-ostream.oo.c styled-ostream.oo.h ostream.oo.h
++term-styled-ostream.h :
+ 	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/term-styled-ostream.oo.c $(srcdir)/term-styled-ostream.oo.h $(srcdir)/styled-ostream.oo.h $(srcdir)/ostream.oo.h
+ term-styled-ostream.c term_styled_ostream.priv.h term_styled_ostream.vt.h : term-styled-ostream.h
+ 	@test -f $@ || { \
