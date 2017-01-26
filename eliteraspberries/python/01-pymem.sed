@@ -9,6 +9,8 @@ s/^#define PyMem_New.*//
 s/^#define PyMem_Resize.*//
 s/^#define PyMem_Del.*//
 
+/PyMem_.*[^;]$/N;s/,\n  */, /
+
 s/PyMem_MALLOC(/malloc(/g
 s/PyMem_REALLOC(/realloc(/g
 s/PyMem_FREE(/free(/g
