@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2015-01-05 14:28:15.000000000 -0500
++++ Makefile.in	2017-02-19 12:47:47.000000000 -0500
+@@ -2469,9 +2469,9 @@
+ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+ $(am__aclocal_m4_deps):
+-t/wrap/aclocal-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/aclocal.in
++t/wrap/aclocal-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/aclocal.in bin/aclocal
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+-t/wrap/automake-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/automake.in
++t/wrap/automake-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/automake.in bin/automake
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ install-binSCRIPTS: $(bin_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+@@ -3688,7 +3688,7 @@
+ 
+ # We depend on configure.ac so that we regenerate the tarball
+ # whenever the Automake version changes.
+-$(srcdir)/doc/amhello-1.0.tar.gz: $(amhello_sources) $(srcdir)/configure.ac
++$(srcdir)/doc/amhello-1.0.tar.gz:
+ 	$(AM_V_GEN)tmp=amhello-output.tmp \
+ 	  && $(am__cd) $(srcdir)/doc/amhello \
+ 	  && : Make our	aclocal and automake avaiable before system ones. \
