@@ -9,3 +9,7 @@
 /^#/!s/EXTCONST /extern const /g
 /^#/!s/^EXT /extern /g
 /^#/!s/VOL /volatile /g
+
+/^#/!s/START_EXTERN_C//
+/^#/!s/END_EXTERN_C//
+/^#/!s/EXTERN_C /extern /g
