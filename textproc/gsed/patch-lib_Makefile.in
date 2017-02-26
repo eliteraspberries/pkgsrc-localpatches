@@ -1,195 +1,78 @@
---- lib/Makefile.in.orig	2017-02-10 20:22:15.020471301 -0500
-+++ lib/Makefile.in	2017-02-10 20:23:30.993666935 -0500
-@@ -151,7 +151,7 @@
+--- lib/Makefile.in.orig	2012-12-22 09:21:10.000000000 -0500
++++ lib/Makefile.in	2017-02-24 15:18:15.000000000 -0500
+@@ -150,8 +150,7 @@
+ 	dirname-lgpl.$(OBJEXT) basename-lgpl.$(OBJEXT) \
  	stripslash.$(OBJEXT) exitfail.$(OBJEXT) localcharset.$(OBJEXT) \
  	malloca.$(OBJEXT) quotearg.$(OBJEXT) se-context.$(OBJEXT) \
- 	se-selinux.$(OBJEXT) stdio.$(OBJEXT) tempname.$(OBJEXT) \
+-	se-selinux.$(OBJEXT) stdio.$(OBJEXT) tempname.$(OBJEXT) \
 -	unistd.$(OBJEXT) version-etc.$(OBJEXT) \
-+	version-etc.$(OBJEXT) \
++	se-selinux.$(OBJEXT) tempname.$(OBJEXT) version-etc.$(OBJEXT) \
  	version-etc-fsf.$(OBJEXT) wctype-h.$(OBJEXT) xmalloc.$(OBJEXT) \
  	xalloc-die.$(OBJEXT)
  libsed_a_OBJECTS = $(am_libsed_a_OBJECTS)
-@@ -1019,7 +1019,7 @@
- 	stat-macros.h stdarg.in.h stdbool.in.h stddef.in.h stdint.in.h \
- 	stdio.in.h stdlib.in.h streq.h strerror.c strerror-override.c \
- 	strerror-override.h string.in.h strverscmp.c sys_stat.in.h \
+@@ -999,7 +998,7 @@
+ noinst_LTLIBRARIES = 
+ EXTRA_DIST = acl-internal.h acl.h acl_entries.c alloca.c alloca.in.h \
+ 	btowc.c c-strcaseeq.h canonicalize-lgpl.c dirname.h dosname.h \
+-	errno.in.h error.c error.h exitfail.h fcntl.in.h fstat.c \
++	error.c error.h exitfail.h fcntl.in.h fstat.c \
+ 	fwriting.c fwriting.h stdio-impl.h getdelim.c getopt.c \
+ 	getopt.in.h getopt1.c getopt_int.h gettimeofday.c intprops.h \
+ 	langinfo.in.h config.charset ref-add.sin ref-del.sin \
+@@ -1016,12 +1015,10 @@
+ 	$(top_srcdir)/build-aux/snippet/c++defs.h \
+ 	$(top_srcdir)/build-aux/snippet/unused-parameter.h \
+ 	$(top_srcdir)/build-aux/snippet/warn-on-use.h stat.c \
+-	stat-macros.h stdarg.in.h stdbool.in.h stddef.in.h stdint.in.h \
+-	stdio.in.h stdlib.in.h streq.h strerror.c strerror-override.c \
+-	strerror-override.h string.in.h strverscmp.c sys_stat.in.h \
 -	sys_time.in.h sys_types.in.h tempname.h time.in.h unistd.in.h \
-+	sys_time.in.h sys_types.in.h tempname.h time.in.h \
- 	unlocked-io.h verify.h wchar.in.h wcrtomb.c wctob.c \
- 	wctomb-impl.h wctomb.c wctype.in.h xalloc.h xalloc-oversized.h
+-	unlocked-io.h verify.h wchar.in.h wcrtomb.c wctob.c \
+-	wctomb-impl.h wctomb.c wctype.in.h xalloc.h xalloc-oversized.h
++	stat-macros.h streq.h strerror.c strerror-override.c \
++	strerror-override.h strverscmp.c tempname.h \
++	unlocked-io.h verify.h wcrtomb.c wctob.c \
++	wctomb-impl.h wctomb.c xalloc.h xalloc-oversized.h
  
-@@ -1042,7 +1042,7 @@
+ # The BUILT_SOURCES created by this Makefile snippet are not used via #include
+ # statements but through direct file reference. Therefore this snippet must be
+@@ -1037,25 +1034,17 @@
+ # statements but through direct file reference. Therefore this snippet must be
+ # present in all Makefile.am that need it. This is ensured by the applicability
+ # 'all' defined above.
+-BUILT_SOURCES = $(ALLOCA_H) configmake.h $(ERRNO_H) fcntl.h \
++BUILT_SOURCES = $(ALLOCA_H) configmake.h fcntl.h \
+ 	$(GETOPT_H) langinfo.h locale.h selinux/selinux.h \
  	$(SELINUX_CONTEXT_H) arg-nonnull.h c++defs.h \
- 	unused-parameter.h warn-on-use.h $(STDARG_H) $(STDBOOL_H) \
- 	$(STDDEF_H) $(STDINT_H) stdio.h stdlib.h string.h sys/stat.h \
+-	unused-parameter.h warn-on-use.h $(STDARG_H) $(STDBOOL_H) \
+-	$(STDDEF_H) $(STDINT_H) stdio.h stdlib.h string.h sys/stat.h \
 -	sys/time.h sys/types.h time.h unistd.h wchar.h wctype.h
-+	sys/time.h sys/types.h time.h wchar.h wctype.h
++	unused-parameter.h warn-on-use.h
  SUFFIXES = .sed .sin .a .o .c .y .l .h .sh .elc .el
- MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t errno.h \
- 	errno.h-t fcntl.h fcntl.h-t getopt.h getopt.h-t langinfo.h \
-@@ -1054,7 +1054,7 @@
- 	stddef.h stddef.h-t stdint.h stdint.h-t stdio.h stdio.h-t \
- 	stdlib.h stdlib.h-t string.h string.h-t sys/stat.h \
- 	sys/stat.h-t sys/time.h sys/time.h-t sys/types.h sys/types.h-t \
+-MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t errno.h \
+-	errno.h-t fcntl.h fcntl.h-t getopt.h getopt.h-t langinfo.h \
++MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t \
++	fcntl.h fcntl.h-t getopt.h getopt.h-t langinfo.h \
+ 	langinfo.h-t locale.h locale.h-t selinux/selinux.h \
+ 	selinux/selinux.h-t selinux/context.h selinux/context.h-t \
+ 	arg-nonnull.h arg-nonnull.h-t c++defs.h c++defs.h-t \
+-	unused-parameter.h unused-parameter.h-t warn-on-use.h \
+-	warn-on-use.h-t stdarg.h stdarg.h-t stdbool.h stdbool.h-t \
+-	stddef.h stddef.h-t stdint.h stdint.h-t stdio.h stdio.h-t \
+-	stdlib.h stdlib.h-t string.h string.h-t sys/stat.h \
+-	sys/stat.h-t sys/time.h sys/time.h-t sys/types.h sys/types.h-t \
 -	time.h time.h-t unistd.h unistd.h-t wchar.h wchar.h-t wctype.h \
-+	time.h time.h-t wchar.h wchar.h-t wctype.h \
- 	wctype.h-t
+-	wctype.h-t
++	unused-parameter.h unused-parameter.h-t warn-on-use.h warn-on-use.h-t
  MOSTLYCLEANDIRS = selinux sys
  CLEANFILES = configmake.h configmake.h-t charset.alias ref-add.sed \
-@@ -1069,7 +1069,7 @@
+ 	ref-del.sed
+@@ -1069,7 +1058,7 @@
  	dirname-lgpl.c basename-lgpl.c stripslash.c exitfail.c \
  	gettext.h localcharset.h localcharset.c malloca.c quotearg.c \
  	se-context.in.h se-selinux.in.h se-context.c se-selinux.c \
 -	stdio.c tempname.c unistd.c version-etc.h version-etc.c \
-+	stdio.c tempname.c version-etc.h version-etc.c \
++	tempname.c version-etc.h version-etc.c \
  	version-etc-fsf.c wctype-h.c xmalloc.c xalloc-die.c
  libsed_a_LIBADD = $(gl_LIBOBJS) @ALLOCA@
  libsed_a_DEPENDENCIES = $(gl_LIBOBJS) @ALLOCA@
-@@ -2340,147 +2340,6 @@
- 	} > $@-t && \
- 	mv $@-t $@
- 
--# We need the following in order to create an empty placeholder for
--# <unistd.h> when the system doesn't have one.
--unistd.h: unistd.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
--	$(AM_V_GEN)rm -f $@-t $@ && \
--	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
--	  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
--	      -e 's|@''HAVE_UNISTD_H''@|$(HAVE_UNISTD_H)|g' \
--	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
--	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
--	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
--	      -e 's|@''NEXT_UNISTD_H''@|$(NEXT_UNISTD_H)|g' \
--	      -e 's|@''WINDOWS_64_BIT_OFF_T''@|$(WINDOWS_64_BIT_OFF_T)|g' \
--	      -e 's/@''GNULIB_CHDIR''@/$(GNULIB_CHDIR)/g' \
--	      -e 's/@''GNULIB_CHOWN''@/$(GNULIB_CHOWN)/g' \
--	      -e 's/@''GNULIB_CLOSE''@/$(GNULIB_CLOSE)/g' \
--	      -e 's/@''GNULIB_DUP''@/$(GNULIB_DUP)/g' \
--	      -e 's/@''GNULIB_DUP2''@/$(GNULIB_DUP2)/g' \
--	      -e 's/@''GNULIB_DUP3''@/$(GNULIB_DUP3)/g' \
--	      -e 's/@''GNULIB_ENVIRON''@/$(GNULIB_ENVIRON)/g' \
--	      -e 's/@''GNULIB_EUIDACCESS''@/$(GNULIB_EUIDACCESS)/g' \
--	      -e 's/@''GNULIB_FACCESSAT''@/$(GNULIB_FACCESSAT)/g' \
--	      -e 's/@''GNULIB_FCHDIR''@/$(GNULIB_FCHDIR)/g' \
--	      -e 's/@''GNULIB_FCHOWNAT''@/$(GNULIB_FCHOWNAT)/g' \
--	      -e 's/@''GNULIB_FDATASYNC''@/$(GNULIB_FDATASYNC)/g' \
--	      -e 's/@''GNULIB_FSYNC''@/$(GNULIB_FSYNC)/g' \
--	      -e 's/@''GNULIB_FTRUNCATE''@/$(GNULIB_FTRUNCATE)/g' \
--	      -e 's/@''GNULIB_GETCWD''@/$(GNULIB_GETCWD)/g' \
--	      -e 's/@''GNULIB_GETDOMAINNAME''@/$(GNULIB_GETDOMAINNAME)/g' \
--	      -e 's/@''GNULIB_GETDTABLESIZE''@/$(GNULIB_GETDTABLESIZE)/g' \
--	      -e 's/@''GNULIB_GETGROUPS''@/$(GNULIB_GETGROUPS)/g' \
--	      -e 's/@''GNULIB_GETHOSTNAME''@/$(GNULIB_GETHOSTNAME)/g' \
--	      -e 's/@''GNULIB_GETLOGIN''@/$(GNULIB_GETLOGIN)/g' \
--	      -e 's/@''GNULIB_GETLOGIN_R''@/$(GNULIB_GETLOGIN_R)/g' \
--	      -e 's/@''GNULIB_GETPAGESIZE''@/$(GNULIB_GETPAGESIZE)/g' \
--	      -e 's/@''GNULIB_GETUSERSHELL''@/$(GNULIB_GETUSERSHELL)/g' \
--	      -e 's/@''GNULIB_GROUP_MEMBER''@/$(GNULIB_GROUP_MEMBER)/g' \
--	      -e 's/@''GNULIB_ISATTY''@/$(GNULIB_ISATTY)/g' \
--	      -e 's/@''GNULIB_LCHOWN''@/$(GNULIB_LCHOWN)/g' \
--	      -e 's/@''GNULIB_LINK''@/$(GNULIB_LINK)/g' \
--	      -e 's/@''GNULIB_LINKAT''@/$(GNULIB_LINKAT)/g' \
--	      -e 's/@''GNULIB_LSEEK''@/$(GNULIB_LSEEK)/g' \
--	      -e 's/@''GNULIB_PIPE''@/$(GNULIB_PIPE)/g' \
--	      -e 's/@''GNULIB_PIPE2''@/$(GNULIB_PIPE2)/g' \
--	      -e 's/@''GNULIB_PREAD''@/$(GNULIB_PREAD)/g' \
--	      -e 's/@''GNULIB_PWRITE''@/$(GNULIB_PWRITE)/g' \
--	      -e 's/@''GNULIB_READ''@/$(GNULIB_READ)/g' \
--	      -e 's/@''GNULIB_READLINK''@/$(GNULIB_READLINK)/g' \
--	      -e 's/@''GNULIB_READLINKAT''@/$(GNULIB_READLINKAT)/g' \
--	      -e 's/@''GNULIB_RMDIR''@/$(GNULIB_RMDIR)/g' \
--	      -e 's/@''GNULIB_SETHOSTNAME''@/$(GNULIB_SETHOSTNAME)/g' \
--	      -e 's/@''GNULIB_SLEEP''@/$(GNULIB_SLEEP)/g' \
--	      -e 's/@''GNULIB_SYMLINK''@/$(GNULIB_SYMLINK)/g' \
--	      -e 's/@''GNULIB_SYMLINKAT''@/$(GNULIB_SYMLINKAT)/g' \
--	      -e 's/@''GNULIB_TTYNAME_R''@/$(GNULIB_TTYNAME_R)/g' \
--	      -e 's/@''GNULIB_UNISTD_H_GETOPT''@/0$(GNULIB_GL_UNISTD_H_GETOPT)/g' \
--	      -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/$(GNULIB_UNISTD_H_NONBLOCKING)/g' \
--	      -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/$(GNULIB_UNISTD_H_SIGPIPE)/g' \
--	      -e 's/@''GNULIB_UNLINK''@/$(GNULIB_UNLINK)/g' \
--	      -e 's/@''GNULIB_UNLINKAT''@/$(GNULIB_UNLINKAT)/g' \
--	      -e 's/@''GNULIB_USLEEP''@/$(GNULIB_USLEEP)/g' \
--	      -e 's/@''GNULIB_WRITE''@/$(GNULIB_WRITE)/g' \
--	      < $(srcdir)/unistd.in.h | \
--	  sed -e 's|@''HAVE_CHOWN''@|$(HAVE_CHOWN)|g' \
--	      -e 's|@''HAVE_DUP2''@|$(HAVE_DUP2)|g' \
--	      -e 's|@''HAVE_DUP3''@|$(HAVE_DUP3)|g' \
--	      -e 's|@''HAVE_EUIDACCESS''@|$(HAVE_EUIDACCESS)|g' \
--	      -e 's|@''HAVE_FACCESSAT''@|$(HAVE_FACCESSAT)|g' \
--	      -e 's|@''HAVE_FCHDIR''@|$(HAVE_FCHDIR)|g' \
--	      -e 's|@''HAVE_FCHOWNAT''@|$(HAVE_FCHOWNAT)|g' \
--	      -e 's|@''HAVE_FDATASYNC''@|$(HAVE_FDATASYNC)|g' \
--	      -e 's|@''HAVE_FSYNC''@|$(HAVE_FSYNC)|g' \
--	      -e 's|@''HAVE_FTRUNCATE''@|$(HAVE_FTRUNCATE)|g' \
--	      -e 's|@''HAVE_GETDTABLESIZE''@|$(HAVE_GETDTABLESIZE)|g' \
--	      -e 's|@''HAVE_GETGROUPS''@|$(HAVE_GETGROUPS)|g' \
--	      -e 's|@''HAVE_GETHOSTNAME''@|$(HAVE_GETHOSTNAME)|g' \
--	      -e 's|@''HAVE_GETLOGIN''@|$(HAVE_GETLOGIN)|g' \
--	      -e 's|@''HAVE_GETPAGESIZE''@|$(HAVE_GETPAGESIZE)|g' \
--	      -e 's|@''HAVE_GROUP_MEMBER''@|$(HAVE_GROUP_MEMBER)|g' \
--	      -e 's|@''HAVE_LCHOWN''@|$(HAVE_LCHOWN)|g' \
--	      -e 's|@''HAVE_LINK''@|$(HAVE_LINK)|g' \
--	      -e 's|@''HAVE_LINKAT''@|$(HAVE_LINKAT)|g' \
--	      -e 's|@''HAVE_PIPE''@|$(HAVE_PIPE)|g' \
--	      -e 's|@''HAVE_PIPE2''@|$(HAVE_PIPE2)|g' \
--	      -e 's|@''HAVE_PREAD''@|$(HAVE_PREAD)|g' \
--	      -e 's|@''HAVE_PWRITE''@|$(HAVE_PWRITE)|g' \
--	      -e 's|@''HAVE_READLINK''@|$(HAVE_READLINK)|g' \
--	      -e 's|@''HAVE_READLINKAT''@|$(HAVE_READLINKAT)|g' \
--	      -e 's|@''HAVE_SETHOSTNAME''@|$(HAVE_SETHOSTNAME)|g' \
--	      -e 's|@''HAVE_SLEEP''@|$(HAVE_SLEEP)|g' \
--	      -e 's|@''HAVE_SYMLINK''@|$(HAVE_SYMLINK)|g' \
--	      -e 's|@''HAVE_SYMLINKAT''@|$(HAVE_SYMLINKAT)|g' \
--	      -e 's|@''HAVE_UNLINKAT''@|$(HAVE_UNLINKAT)|g' \
--	      -e 's|@''HAVE_USLEEP''@|$(HAVE_USLEEP)|g' \
--	      -e 's|@''HAVE_DECL_ENVIRON''@|$(HAVE_DECL_ENVIRON)|g' \
--	      -e 's|@''HAVE_DECL_FCHDIR''@|$(HAVE_DECL_FCHDIR)|g' \
--	      -e 's|@''HAVE_DECL_FDATASYNC''@|$(HAVE_DECL_FDATASYNC)|g' \
--	      -e 's|@''HAVE_DECL_GETDOMAINNAME''@|$(HAVE_DECL_GETDOMAINNAME)|g' \
--	      -e 's|@''HAVE_DECL_GETLOGIN_R''@|$(HAVE_DECL_GETLOGIN_R)|g' \
--	      -e 's|@''HAVE_DECL_GETPAGESIZE''@|$(HAVE_DECL_GETPAGESIZE)|g' \
--	      -e 's|@''HAVE_DECL_GETUSERSHELL''@|$(HAVE_DECL_GETUSERSHELL)|g' \
--	      -e 's|@''HAVE_DECL_SETHOSTNAME''@|$(HAVE_DECL_SETHOSTNAME)|g' \
--	      -e 's|@''HAVE_DECL_TTYNAME_R''@|$(HAVE_DECL_TTYNAME_R)|g' \
--	      -e 's|@''HAVE_OS_H''@|$(HAVE_OS_H)|g' \
--	      -e 's|@''HAVE_SYS_PARAM_H''@|$(HAVE_SYS_PARAM_H)|g' \
--	  | \
--	  sed -e 's|@''REPLACE_CHOWN''@|$(REPLACE_CHOWN)|g' \
--	      -e 's|@''REPLACE_CLOSE''@|$(REPLACE_CLOSE)|g' \
--	      -e 's|@''REPLACE_DUP''@|$(REPLACE_DUP)|g' \
--	      -e 's|@''REPLACE_DUP2''@|$(REPLACE_DUP2)|g' \
--	      -e 's|@''REPLACE_FCHOWNAT''@|$(REPLACE_FCHOWNAT)|g' \
--	      -e 's|@''REPLACE_FTRUNCATE''@|$(REPLACE_FTRUNCATE)|g' \
--	      -e 's|@''REPLACE_GETCWD''@|$(REPLACE_GETCWD)|g' \
--	      -e 's|@''REPLACE_GETDOMAINNAME''@|$(REPLACE_GETDOMAINNAME)|g' \
--	      -e 's|@''REPLACE_GETLOGIN_R''@|$(REPLACE_GETLOGIN_R)|g' \
--	      -e 's|@''REPLACE_GETGROUPS''@|$(REPLACE_GETGROUPS)|g' \
--	      -e 's|@''REPLACE_GETPAGESIZE''@|$(REPLACE_GETPAGESIZE)|g' \
--	      -e 's|@''REPLACE_ISATTY''@|$(REPLACE_ISATTY)|g' \
--	      -e 's|@''REPLACE_LCHOWN''@|$(REPLACE_LCHOWN)|g' \
--	      -e 's|@''REPLACE_LINK''@|$(REPLACE_LINK)|g' \
--	      -e 's|@''REPLACE_LINKAT''@|$(REPLACE_LINKAT)|g' \
--	      -e 's|@''REPLACE_LSEEK''@|$(REPLACE_LSEEK)|g' \
--	      -e 's|@''REPLACE_PREAD''@|$(REPLACE_PREAD)|g' \
--	      -e 's|@''REPLACE_PWRITE''@|$(REPLACE_PWRITE)|g' \
--	      -e 's|@''REPLACE_READ''@|$(REPLACE_READ)|g' \
--	      -e 's|@''REPLACE_READLINK''@|$(REPLACE_READLINK)|g' \
--	      -e 's|@''REPLACE_RMDIR''@|$(REPLACE_RMDIR)|g' \
--	      -e 's|@''REPLACE_SLEEP''@|$(REPLACE_SLEEP)|g' \
--	      -e 's|@''REPLACE_SYMLINK''@|$(REPLACE_SYMLINK)|g' \
--	      -e 's|@''REPLACE_TTYNAME_R''@|$(REPLACE_TTYNAME_R)|g' \
--	      -e 's|@''REPLACE_UNLINK''@|$(REPLACE_UNLINK)|g' \
--	      -e 's|@''REPLACE_UNLINKAT''@|$(REPLACE_UNLINKAT)|g' \
--	      -e 's|@''REPLACE_USLEEP''@|$(REPLACE_USLEEP)|g' \
--	      -e 's|@''REPLACE_WRITE''@|$(REPLACE_WRITE)|g' \
--	      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|$(UNISTD_H_HAVE_WINSOCK2_H)|g' \
--	      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|$(UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS)|g' \
--	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
--	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
--	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)'; \
--	} > $@-t && \
--	mv $@-t $@
--
- # We need the following in order to create <wchar.h> when the system
- # version does not work standalone.
- wchar.h: wchar.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
