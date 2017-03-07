@@ -1,0 +1,2 @@
+s/^TUKLIB_DECLS_BEGIN.*//
+s/^TUKLIB_DECLS_END.*//
