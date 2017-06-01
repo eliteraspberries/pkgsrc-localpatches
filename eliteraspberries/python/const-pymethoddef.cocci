@@ -2,9 +2,18 @@
 identifier x;
 @@
 (
-  static const PyMethodDef x[] = { ... };
+  const PyMethodDef x[] = { ... };
 |
-  static
 + const
   PyMethodDef x[] = { ... };
+)
+
+@@
+identifier x;
+@@
+(
+  const PyMethodDef x[];
+|
++ const
+  PyMethodDef x[];
 )

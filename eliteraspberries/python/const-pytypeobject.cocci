@@ -1,11 +1,23 @@
 @@
 identifier x, y;
+expression z;
 @@
 (
-  static const PyTypeObject x = { ... };
+  const PyTypeObject x = { ... };
 |
-  static
 + const
   PyTypeObject x = { ... };
 )
-  ... when != x.y
+  ... when != x.y = z
+
+@@
+identifier x, y;
+expression z;
+@@
+(
+  const PyTypeObject x;
+|
++ const
+  PyTypeObject x;
+)
+  ... when != x.y = z

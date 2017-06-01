@@ -12,9 +12,18 @@ expression a, b, c;
 identifier methoddef.x;
 @@
 (
-  static const char x[] = ...;
+  static char x[] = ...;
 |
-  static
++ static
+  char x[] = ...;
+)
+
+@@
+identifier methoddef.x;
+@@
+(
+  const char x[] = ...;
+|
 + const
   char x[] = ...;
 )
