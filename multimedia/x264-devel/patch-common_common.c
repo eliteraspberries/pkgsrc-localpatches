@@ -1,10 +1,10 @@
 $NetBSD$
 
---- common/common.c.orig	2016-10-23 16:45:03.000000000 -0400
-+++ common/common.c	2017-02-27 00:29:15.000000000 -0500
-@@ -27,10 +27,8 @@
- #include "common.h"
+--- common/common.c.orig	2016-03-07 16:45:04.000000000 -0500
++++ common/common.c	2017-05-15 13:33:03.000000000 -0400
+@@ -28,10 +28,8 @@
  
+ #include <stdarg.h>
  #include <ctype.h>
 +#include <stdlib.h>
  
@@ -14,7 +14,7 @@ $NetBSD$
  #if HAVE_THP
  #include <sys/mman.h>
  #endif
-@@ -1192,36 +1190,7 @@
+@@ -1195,36 +1193,7 @@
  void *x264_malloc( int i_size )
  {
      uint8_t *align_buf = NULL;
@@ -52,7 +52,7 @@ $NetBSD$
          x264_log( NULL, X264_LOG_ERROR, "malloc of size %d failed\n", i_size );
      return align_buf;
  }
-@@ -1233,11 +1202,7 @@
+@@ -1236,11 +1205,7 @@
  {
      if( p )
      {
