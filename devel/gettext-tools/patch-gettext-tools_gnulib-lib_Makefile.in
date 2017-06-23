@@ -1,94 +1,8 @@
---- gettext-tools/gnulib-lib/Makefile.in.orig	2017-02-18 04:40:27.000000000 -0500
-+++ gettext-tools/gnulib-lib/Makefile.in	2017-02-18 05:21:54.000000000 -0500
-@@ -529,14 +529,14 @@
- 	uniconv/u8-conv-from-enc.c unictype/ctype_space.c \
- 	unilbrk/lbrktables.c unilbrk/u8-possible-linebreaks.c \
- 	unilbrk/u8-width-linebreaks.c unilbrk/ulc-common.c \
--	unilbrk/ulc-width-linebreaks.c uniname/uniname.c unistd.c \
-+	unilbrk/ulc-width-linebreaks.c uniname/uniname.c \
- 	dup-safer.c fd-safer.c pipe-safer.c unistr/u16-mbtouc.c \
- 	unistr/u16-mbtouc-aux.c unistr/u8-check.c unistr/u8-mblen.c \
- 	unistr/u8-mbtouc.c unistr/u8-mbtouc-aux.c \
- 	unistr/u8-mbtouc-unsafe.c unistr/u8-mbtouc-unsafe-aux.c \
- 	unistr/u8-mbtoucr.c unistr/u8-prev.c unistr/u8-uctomb.c \
- 	unistr/u8-uctomb-aux.c uniwidth/width.c wait-process.h \
--	wait-process.c wctype-h.c xalloc.h xmalloc.c xstrdup.c \
-+	wait-process.c xalloc.h xmalloc.c xstrdup.c \
- 	xconcat-filename.c xerror.h xerror.c gl_xlist.h gl_xlist.c \
- 	xmalloca.c xreadlink.c xsetenv.h xsetenv.c xsize.h xsize.c \
- 	xstriconv.h xstriconv.c xstriconveh.c xvasprintf.h \
-@@ -595,11 +595,11 @@
- 	glthread/threadlib.lo glthread/tls.lo tmpdir.lo trim.lo \
- 	$(am__objects_6) $(am__objects_7) unilbrk/lbrktables.lo \
- 	$(am__objects_8) $(am__objects_9) unilbrk/ulc-common.lo \
--	$(am__objects_10) $(am__objects_11) unistd.lo dup-safer.lo \
-+	$(am__objects_10) $(am__objects_11) dup-safer.lo \
- 	fd-safer.lo pipe-safer.lo $(am__objects_12) $(am__objects_13) \
- 	$(am__objects_14) $(am__objects_15) $(am__objects_16) \
- 	$(am__objects_17) $(am__objects_18) $(am__objects_19) \
--	$(am__objects_20) wait-process.lo wctype-h.lo xmalloc.lo \
-+	$(am__objects_20) wait-process.lo xmalloc.lo \
- 	xstrdup.lo xconcat-filename.lo xerror.lo gl_xlist.lo \
- 	xmalloca.lo xreadlink.lo xsetenv.lo xsize.lo xstriconv.lo \
- 	xstriconveh.lo xvasprintf.lo xasprintf.lo
-@@ -2108,7 +2108,7 @@
- 	concat-filename.h $(top_srcdir)/../build-aux/csharpcomp.sh.in \
- 	classpath.c classpath.h \
- 	$(top_srcdir)/../build-aux/csharpexec.sh.in dirent.in.h \
--	dirfd.c dosname.h dup2.c errno.in.h error.c error.h exitfail.h \
-+	dirfd.c dosname.h dup2.c error.c error.h exitfail.h \
- 	fcntl.c fcntl.in.h fd-hook.h fd-ostream.h fd-ostream.c \
- 	fd_ostream.priv.h fd_ostream.vt.h fd-ostream.oo.c \
- 	fd-ostream.oo.h file-ostream.h file-ostream.c \
-@@ -2231,32 +2231,30 @@
- 	$(top_srcdir)/../build-aux/snippet/c++defs.h \
- 	$(top_srcdir)/../build-aux/snippet/unused-parameter.h \
- 	$(top_srcdir)/../build-aux/snippet/warn-on-use.h snprintf.c \
--	spawn.in.h stat.c stdarg.in.h stdbool.in.h stddef.in.h \
--	stdint.in.h stdio.in.h stdlib.in.h stpcpy.c stpncpy.c \
-+	spawn.in.h stat.c stpcpy.c stpncpy.c \
- 	strchrnul.c strchrnul.valgrind strcspn.c streq.h strerror.c \
--	strerror-override.c strerror-override.h iconveh.h string.in.h \
-+	strerror-override.c strerror-override.h iconveh.h \
- 	strnlen.c strpbrk.c str-two-way.h strstr.c strtol.c strtol.c \
- 	strtoul.c styled-ostream.h styled-ostream.c \
- 	styled_ostream.priv.h styled_ostream.vt.h styled-ostream.oo.c \
--	styled-ostream.oo.h sys_select.in.h sys_stat.in.h \
--	sys_time.in.h sys_types.in.h sys_wait.in.h tempname.h \
-+	styled-ostream.oo.h sys_select.in.h tempname.h \
- 	term-ostream.h term-ostream.c term_ostream.priv.h \
- 	term_ostream.vt.h term-ostream.oo.c term-ostream.oo.h \
- 	term-styled-ostream.h term-styled-ostream.c \
- 	term_styled_ostream.priv.h term_styled_ostream.vt.h \
- 	term-styled-ostream.oo.c term-styled-ostream.oo.h tparm.c \
- 	tputs.c terminfo.h $(top_srcdir)/../build-aux/config.rpath \
--	time.in.h trim.h iconveh.h localcharset.h striconveha.h \
-+	trim.h iconveh.h localcharset.h striconveha.h \
- 	uniconv.in.h unictype.in.h unictype/bitmap.h \
- 	unictype/ctype_space.h unilbrk.in.h unilbrk/lbrkprop1.h \
- 	unilbrk/lbrkprop2.h unilbrk/lbrktables.h uniwidth/cjk.h \
- 	unilbrk/ulc-common.h uniname.in.h uniname/gen-uninames.lisp \
--	uniname/uninames.h unistd.in.h unistd--.h unistd-safer.h \
-+	uniname/uninames.h unistd--.h unistd-safer.h \
- 	unistr.in.h unitypes.in.h localcharset.h uniwidth.in.h \
- 	uniwidth/cjk.h unlocked-io.h unsetenv.c asnprintf.c float+.h \
- 	printf-args.c printf-args.h printf-parse.c printf-parse.h \
- 	vasnprintf.c vasnprintf.h asprintf.c vasprintf.c verify.h \
--	vsnprintf.c waitpid.c wchar.in.h wctype.in.h wcwidth.c write.c \
-+	vsnprintf.c waitpid.c wcwidth.c write.c \
- 	concat-filename.h xmalloca.h xmemdup0.c xmemdup0.h xreadlink.h \
- 	xstriconveh.h xalloc.h
- 
-@@ -2275,7 +2273,7 @@
- # present in all Makefile.am that need it. This is ensured by the applicability
- # 'all' defined above.
- BUILT_SOURCES = $(ALLOCA_H) $(BYTESWAP_H) configmake.h dirent.h \
--	$(ERRNO_H) fcntl.h fd-ostream.h fd-ostream.c fd_ostream.priv.h \
-+	fcntl.h fd-ostream.h fd-ostream.c fd_ostream.priv.h \
- 	fd_ostream.vt.h file-ostream.h file-ostream.c \
- 	file_ostream.priv.h file_ostream.vt.h $(FLOAT_H) $(FNMATCH_H) \
- 	$(GETOPT_H) html-ostream.h html-ostream.c html_ostream.priv.h \
-@@ -2285,21 +2283,18 @@
+$NetBSD$
+
+--- gettext-tools/gnulib-lib/Makefile.in.orig	2017-05-23 12:45:52.000000000 -0400
++++ gettext-tools/gnulib-lib/Makefile.in	2017-05-23 12:52:34.000000000 -0400
+@@ -2285,18 +2285,15 @@
  	iconv_open-osf.h iconv_open-solaris.h langinfo.h $(LIBGLIB_H) \
  	$(LIBXML_H) locale.h math.h ostream.h ostream.c ostream.priv.h \
  	ostream.vt.h $(SCHED_H) signal.h arg-nonnull.h c++defs.h \
@@ -98,7 +12,7 @@
  	styled-ostream.h styled-ostream.c styled_ostream.priv.h \
 -	styled_ostream.vt.h sys/select.h sys/stat.h sys/time.h \
 -	sys/types.h sys/wait.h term-ostream.h term-ostream.c \
-+	styled_ostream.vt.h sys/select.h term-ostream.h term-ostream.c \
++	styled_ostream.vt.h term-ostream.h term-ostream.c \
  	term_ostream.priv.h term_ostream.vt.h term-styled-ostream.h \
  	term-styled-ostream.c term_styled_ostream.priv.h \
 -	term_styled_ostream.vt.h time.h $(LIBUNISTRING_UNICONV_H) \
@@ -110,47 +24,9 @@
 +	$(LIBUNISTRING_UNINAME_H) $(LIBUNISTRING_UNISTR_H) \
 +	$(LIBUNISTRING_UNITYPES_H) $(LIBUNISTRING_UNIWIDTH_H)
  MOSTLYCLEANFILES = core *.stackdump core *.stackdump alloca.h \
--	alloca.h-t byteswap.h byteswap.h-t dirent.h dirent.h-t errno.h \
--	errno.h-t fcntl.h fcntl.h-t float.h float.h-t fnmatch.h \
-+	alloca.h-t byteswap.h byteswap.h-t dirent.h dirent.h-t \
-+	fcntl.h fcntl.h-t float.h float.h-t fnmatch.h \
- 	fnmatch.h-t getopt.h getopt.h-t iconv.h iconv.h-t \
- 	iconv_open-aix.h-t iconv_open-hpux.h-t iconv_open-irix.h-t \
- 	iconv_open-osf.h-t iconv_open-solaris.h-t langinfo.h \
-@@ -2324,15 +2319,10 @@
- 	math.h-t sched.h sched.h-t signal.h signal.h-t arg-nonnull.h \
- 	arg-nonnull.h-t c++defs.h c++defs.h-t unused-parameter.h \
- 	unused-parameter.h-t warn-on-use.h warn-on-use.h-t spawn.h \
--	spawn.h-t stdarg.h stdarg.h-t stdbool.h stdbool.h-t stddef.h \
--	stddef.h-t stdint.h stdint.h-t stdio.h stdio.h-t stdlib.h \
--	stdlib.h-t string.h string.h-t sys/select.h sys/select.h-t \
--	sys/stat.h sys/stat.h-t sys/time.h sys/time.h-t sys/types.h \
--	sys/types.h-t sys/wait.h sys/wait.h-t time.h time.h-t \
-+	spawn.h-t sys/select.h sys/select.h-t \
- 	uniconv.h uniconv.h-t unictype.h unictype.h-t unilbrk.h \
--	unilbrk.h-t uniname.h uniname.h-t unistd.h unistd.h-t unistr.h \
--	unistr.h-t unitypes.h unitypes.h-t uniwidth.h uniwidth.h-t \
--	wchar.h wchar.h-t wctype.h wctype.h-t
-+	unilbrk.h-t uniname.h uniname.h-t unistr.h \
-+	unistr.h-t unitypes.h unitypes.h-t uniwidth.h uniwidth.h-t
- MOSTLYCLEANDIRS = sys sys sys
- CLEANFILES = configmake.h configmake.h-t charset.alias ref-add.sed \
- 	ref-del.sed
-@@ -2402,11 +2392,11 @@
- 	tmpdir.c trim.c $(am__append_21) $(am__append_22) \
- 	unilbrk/lbrktables.c $(am__append_23) $(am__append_24) \
- 	unilbrk/ulc-common.c $(am__append_25) $(am__append_26) \
--	unistd.c dup-safer.c fd-safer.c pipe-safer.c $(am__append_27) \
-+	dup-safer.c fd-safer.c pipe-safer.c $(am__append_27) \
- 	$(am__append_28) $(am__append_29) $(am__append_30) \
- 	$(am__append_31) $(am__append_32) $(am__append_33) \
- 	$(am__append_34) $(am__append_35) wait-process.h \
--	wait-process.c wctype-h.c xalloc.h xmalloc.c xstrdup.c \
-+	wait-process.c xalloc.h xmalloc.c xstrdup.c \
- 	xconcat-filename.c xerror.h xerror.c gl_xlist.h gl_xlist.c \
- 	xmalloca.c xreadlink.c xsetenv.h xsetenv.c xsize.h xsize.c \
- 	xstriconv.h xstriconv.c xstriconveh.c xvasprintf.h \
-@@ -3640,7 +3630,7 @@
+ 	alloca.h-t byteswap.h byteswap.h-t dirent.h dirent.h-t errno.h \
+ 	errno.h-t fcntl.h fcntl.h-t float.h float.h-t fnmatch.h \
+@@ -3640,7 +3637,7 @@
  	mv $@-t $@
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -159,7 +35,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/fd-ostream.oo.c $(srcdir)/fd-ostream.oo.h $(srcdir)/ostream.oo.h
  fd-ostream.c fd_ostream.priv.h fd_ostream.vt.h : fd-ostream.h
  	@test -f $@ || { \
-@@ -3656,7 +3646,7 @@
+@@ -3656,7 +3653,7 @@
  	}
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -168,7 +44,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/file-ostream.oo.c $(srcdir)/file-ostream.oo.h $(srcdir)/ostream.oo.h
  file-ostream.c file_ostream.priv.h file_ostream.vt.h : file-ostream.h
  	@test -f $@ || { \
-@@ -3718,7 +3708,7 @@
+@@ -3718,7 +3715,7 @@
  
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -177,7 +53,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/html-ostream.oo.c $(srcdir)/html-ostream.oo.h $(srcdir)/ostream.oo.h
  html-ostream.c html_ostream.priv.h html_ostream.vt.h : html-ostream.h
  	@test -f $@ || { \
-@@ -3734,7 +3724,7 @@
+@@ -3734,7 +3731,7 @@
  	}
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -186,7 +62,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/html-styled-ostream.oo.c $(srcdir)/html-styled-ostream.oo.h $(srcdir)/styled-ostream.oo.h $(srcdir)/ostream.oo.h
  html-styled-ostream.c html_styled_ostream.priv.h html_styled_ostream.vt.h : html-styled-ostream.h
  	@test -f $@ || { \
-@@ -4556,7 +4546,7 @@
+@@ -4556,7 +4553,7 @@
  	mv $@-t $@
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -195,7 +71,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/ostream.oo.c $(srcdir)/ostream.oo.h
  ostream.c ostream.priv.h ostream.vt.h : ostream.h
  	@test -f $@ || { \
-@@ -5106,7 +5096,7 @@
+@@ -5106,7 +5103,7 @@
  	mv $@-t $@
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -204,7 +80,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/styled-ostream.oo.c $(srcdir)/styled-ostream.oo.h $(srcdir)/ostream.oo.h
  styled-ostream.c styled_ostream.priv.h styled_ostream.vt.h : styled-ostream.h
  	@test -f $@ || { \
-@@ -5257,7 +5247,7 @@
+@@ -5257,7 +5254,7 @@
  	mv $@-t $@
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.
@@ -213,7 +89,7 @@
  	$(top_srcdir)/../build-aux/moopp $(MOOPPFLAGS) $(srcdir)/term-ostream.oo.c $(srcdir)/term-ostream.oo.h $(srcdir)/ostream.oo.h
  term-ostream.c term_ostream.priv.h term_ostream.vt.h : term-ostream.h
  	@test -f $@ || { \
-@@ -5273,7 +5263,7 @@
+@@ -5273,7 +5270,7 @@
  	}
  # This is a Makefile rule that generates multiple files at once; see the
  # automake documentation, node "Multiple Outputs", for details.

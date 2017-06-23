@@ -1,8 +1,19 @@
 $NetBSD$
 
---- gettext-tools/gnulib-tests/Makefile.in.orig	2015-09-11 03:05:10.000000000 +0000
-+++ gettext-tools/gnulib-tests/Makefile.in
-@@ -5867,19 +5867,19 @@ inttypes.h: inttypes.in.h $(top_builddir
+--- gettext-tools/gnulib-tests/Makefile.in.orig	2016-06-11 09:01:12.000000000 -0400
++++ gettext-tools/gnulib-tests/Makefile.in	2017-05-23 12:45:52.000000000 -0400
+@@ -3392,8 +3392,8 @@
+ # statements but through direct file reference. Therefore this snippet must be
+ # present in all Makefile.am that need it. This is ensured by the applicability
+ # 'all' defined above.
+-BUILT_SOURCES = ctype.h inttypes.h $(am__append_3) arg-nonnull.h \
+-	c++defs.h unused-parameter.h warn-on-use.h $(STDALIGN_H)
++BUILT_SOURCES = $(am__append_3) arg-nonnull.h \
++	c++defs.h unused-parameter.h warn-on-use.h
+ SUFFIXES = 
+ 
+ # This test expects compilation of test-verify.c to fail, and
+@@ -6468,19 +6468,19 @@
  	} > $@-t && \
  	mv $@-t $@
  
