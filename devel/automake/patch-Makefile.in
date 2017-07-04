@@ -5,10 +5,10 @@
  	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
  $(am__aclocal_m4_deps):
 -t/wrap/aclocal-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/aclocal.in
-+t/wrap/aclocal-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/aclocal.in bin/aclocal
++t/wrap/aclocal-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/aclocal.in $(top_srcdir)/bin/aclocal
  	cd $(top_builddir) && $(SHELL) ./config.status $@
 -t/wrap/automake-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/automake.in
-+t/wrap/automake-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/automake.in bin/automake
++t/wrap/automake-${APIVERSION}: $(top_builddir)/config.status $(top_srcdir)/t/wrap/automake.in $(top_srcdir)/bin/automake
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  install-binSCRIPTS: $(bin_SCRIPTS)
  	@$(NORMAL_INSTALL)
