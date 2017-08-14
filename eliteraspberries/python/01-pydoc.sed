@@ -14,5 +14,5 @@
 }
 /^#/!s/PyDoc_STRVAR_shared(\([^,]*\), \("[^"]*"\));/const char \1\[\] = \2;/g
 /^#/!s/PyDoc_STRVAR(\([^,]*\), \("[^"]*"\));/static const char \1\[\] = \2;/g
-/^#/!s/PyDoc_VAR(\([^)]*\))/static char \1\[\]/g
+/^#/!s/PyDoc_VAR(\([^)]*\))/static const char \1\[\]/g
 /^#/!s/PyDoc_STR("\([^"]*\)")/"\1"/g
