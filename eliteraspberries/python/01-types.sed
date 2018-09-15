@@ -11,7 +11,7 @@
 /^#/!s/PY_LLONG_MAX/LLONG_MAX/g
 /^#/!s/PY_ULLONG_MAX/ULLONG_MAX/g
 /^#/!s/PY_SIZE_MAX/SIZE_MAX/g
-/^#/!s/PY_SSIZE_T_MIN/-1/g
+/^#/!s/PY_SSIZE_T_MIN/(-PY_SSIZE_T_MAX-1)/g
 /^#/!s/PY_SSIZE_T_MAX/SSIZE_MAX/g
 
 /^#/!s/PY_LONG_LONG/long long/g
